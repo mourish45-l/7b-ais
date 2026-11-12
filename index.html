@@ -1,0 +1,1464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Children's Day | Grade 7B - Aurobana Indian School</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Canvas Confetti for lightweight celebration bursts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.72);
+            --glass-bg-strong: rgba(255, 255, 255, 0.86);
+            --glass-border: rgba(255, 255, 255, 0.82);
+            --glass-shadow: 0 12px 32px -8px rgba(30, 27, 75, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.92);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6fb;
+            background-image:
+                radial-gradient(at 10% 8%, rgba(199, 210, 254, 0.75) 0px, transparent 52%),
+                radial-gradient(at 88% 12%, rgba(253, 230, 138, 0.62) 0px, transparent 50%),
+                radial-gradient(at 82% 55%, rgba(254, 205, 211, 0.58) 0px, transparent 52%),
+                radial-gradient(at 18% 72%, rgba(186, 230, 253, 0.65) 0px, transparent 52%),
+                radial-gradient(at 52% 94%, rgba(221, 214, 254, 0.62) 0px, transparent 55%);
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* Lightweight GPU-Accelerated Glass Panels (Zero Scroll Lag) */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .liquid-glass-subtle {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 255, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 6px 18px -6px rgba(30, 27, 75, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+        }
+
+        .liquid-glass-dark {
+            background: linear-gradient(145deg, #1e1b4b, #312e81);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow: 0 14px 30px -10px rgba(15, 23, 42, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+        }
+
+        /* Student Card Styling with Smooth 60fps GPU Transitions */
+        .star-card {
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 255, 0.92));
+            border: 1px solid rgba(255, 255, 255, 0.98);
+            box-shadow: 0 6px 20px -6px rgba(30, 27, 75, 0.07), inset 0 1px 1px rgba(255, 255, 255, 1);
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            will-change: transform;
+        }
+
+        .star-card:hover {
+            transform: translateY(-4px);
+            background: #ffffff;
+            box-shadow: 0 14px 26px -8px rgba(30, 27, 75, 0.13), inset 0 1px 1px rgba(255, 255, 255, 1);
+        }
+
+        /* Smooth AOS Custom Easing */
+        [data-aos] {
+            transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+        }
+
+        /* Ensure content stays visible if AOS hasn't initialized yet */
+        html:not(.aos-ready) [data-aos] {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-amber-200 selection:text-indigo-950">
+
+    <!-- Main Container -->
+    <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-16">
+
+        <!-- Hero Section -->
+        <header class="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
+            <div data-aos="fade-down" data-aos-duration="700" class="liquid-glass inline-flex flex-wrap items-center justify-center gap-2 px-5 py-2 rounded-full mb-5 text-xs sm:text-sm font-bold tracking-wider uppercase text-indigo-950">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <span>Aurobana Indian School</span>
+                <span class="text-indigo-400">&bull;</span>
+                <span class="text-amber-800">Grade VII &ndash; Section B</span>
+            </div>
+
+            <h1 data-aos="fade-up" data-aos-delay="100" data-aos-duration="750" class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-indigo-950 tracking-tight leading-tight mb-4">
+                Happy Children&rsquo;s Day
+            </h1>
+
+            <p data-aos="fade-up" data-aos-delay="180" data-aos-duration="750" class="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed mb-8">
+                Celebrating the curiosity, energy, and bright promise of the 24 young learners of <strong class="text-indigo-950">Grade 7B</strong>, alongside heartfelt gratitude to our mentors and teachers.
+            </p>
+
+            <!-- Action Navigation & Search Bar -->
+            <div data-aos="fade-up" data-aos-delay="260" data-aos-duration="750" class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                <a href="#why-celebrate" class="liquid-glass inline-flex items-center gap-2 hover:bg-white/85 text-indigo-950 font-sans font-semibold text-sm sm:text-base px-6 py-3.5 rounded-full transition-all duration-200">
+                    <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <span>Why We Celebrate</span>
+                </a>
+
+                <a href="#class-potluck" class="liquid-glass inline-flex items-center gap-2 hover:bg-white/85 text-indigo-950 font-sans font-semibold text-sm sm:text-base px-6 py-3.5 rounded-full transition-all duration-200">
+                    <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                    </svg>
+                    <span>Potluck Menu (18+)</span>
+                </a>
+
+                <a href="#faculty-thanks" class="liquid-glass inline-flex items-center gap-2 hover:bg-white/85 text-indigo-950 font-sans font-semibold text-sm sm:text-base px-6 py-3.5 rounded-full transition-all duration-200">
+                    <svg class="w-4 h-4 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    <span>Our Teachers</span>
+                </a>
+
+                <!-- Search / Filter Input -->
+                <div class="relative w-full sm:w-72">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        oninput="filterStars()"
+                        placeholder="Search name, roll no, or dish..."
+                        class="liquid-glass w-full pl-11 pr-4 py-3.5 rounded-full text-slate-800 placeholder-slate-500 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+                    >
+                    <svg class="w-4 h-4 text-indigo-900 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <!-- Why We Celebrate Children's Day Section -->
+        <section id="why-celebrate" data-aos="fade-up" data-aos-duration="800" aria-label="Why We Celebrate Children's Day" class="max-w-6xl mx-auto mb-16 scroll-mt-8">
+            <div class="liquid-glass rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-900 via-amber-500 to-rose-600"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <span class="inline-block text-xs font-bold uppercase tracking-widest text-amber-800 bg-white/75 border border-white px-3.5 py-1 rounded-full mb-3 shadow-sm">
+                            November 14 &bull; Bal Diwas
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-indigo-950 mb-4">
+                            Why Do We Celebrate Children&rsquo;s Day?
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-4">
+                            Across India, <strong class="text-indigo-950">Children&rsquo;s Day</strong> is celebrated every year on <strong class="text-indigo-950">November 14</strong> to commemorate the birth anniversary of <strong class="text-indigo-950">Pandit Jawaharlal Nehru</strong>, Independent India&rsquo;s first Prime Minister, affectionately remembered as <em>Chacha Nehru</em>.
+                        </p>
+                        <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                            He believed that children are the true strength and foundation of a progressive nation. At <strong class="text-indigo-950">Aurobana Indian School</strong>, this occasion reminds us to nurture every student&rsquo;s right to quality education, creative exploration, kindness, and confident self-expression.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="liquid-glass-subtle rounded-2xl p-6 border-l-4 border-l-amber-500">
+                            <svg class="w-8 h-8 text-amber-500 mb-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                            <blockquote class="font-display italic text-lg sm:text-xl text-indigo-950 leading-relaxed mb-3">
+                                &ldquo;The children of today will make the India of tomorrow. The way we bring them up will determine the future of the country.&rdquo;
+                            </blockquote>
+                            <cite class="not-italic text-xs font-bold uppercase tracking-wider text-amber-800">
+                                &mdash; Pandit Jawaharlal Nehru
+                            </cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Directory Header -->
+        <div id="student-directory" data-aos="fade-up" data-aos-duration="700" class="flex flex-col sm:flex-row sm:items-end justify-between max-w-7xl mx-auto mb-7 px-1 gap-3 scroll-mt-8">
+            <div>
+                <span class="liquid-glass-subtle inline-block text-xs font-bold uppercase tracking-widest text-indigo-900 px-3 py-1 rounded-full mb-2">
+                    Grade VII &ndash; Section B
+                </span>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-indigo-950">Meet the 24 Students of Grade 7B</h2>
+                <p class="text-sm text-slate-600 mt-1">Click any student card to view or edit their assigned potluck dish globally</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2.5">
+                <span id="dbSyncBadge" class="liquid-glass text-xs font-semibold text-emerald-800 px-3.5 py-2 rounded-full inline-flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span id="dbSyncText">Realtime DB (asia-southeast1)</span>
+                </span>
+                <span class="liquid-glass text-xs font-semibold text-indigo-950 px-4 py-2 rounded-full">
+                    24 Bright Minds &bull; Roll No. 7201&ndash;7224
+                </span>
+            </div>
+        </div>
+
+        <!-- Stars Grid Section (Liquid Glass Student Cards) -->
+        <section aria-label="Grade 7B Students" class="mb-16">
+            <div id="starsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                <!-- Cards will be dynamically injected via JavaScript -->
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="noResults" class="liquid-glass hidden text-center py-12 rounded-3xl max-w-md mx-auto">
+                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-indigo-100 text-indigo-900 flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+                <h3 class="font-display text-xl font-bold text-indigo-950">No matching student found</h3>
+                <p class="text-slate-600 text-sm mt-1">Clear the search bar to view all 24 students of Grade 7B.</p>
+            </div>
+        </section>
+
+        <!-- Teachers' Student Appreciations & Comments Wall (Viewable at bottom of Student Directory) -->
+        <section id="student-reviews-wall" data-aos="fade-up" data-aos-duration="800" aria-label="Teachers' Appreciations for Students" class="max-w-6xl mx-auto mb-16 scroll-mt-8">
+            <div class="liquid-glass rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-900 via-purple-600 to-rose-600"></div>
+
+                <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-white/60 pb-6 mb-8 gap-4">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span class="inline-block text-xs font-bold uppercase tracking-widest text-indigo-900 bg-white/80 border border-white px-3.5 py-1 rounded-full shadow-sm">
+                                Faculty Notes &amp; Blessings
+                            </span>
+                            <span id="studentReviewCountBadge" class="inline-block text-xs font-bold text-rose-900 bg-rose-100/80 border border-white px-3 py-1 rounded-full">
+                                0 Reviews
+                            </span>
+                        </div>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-indigo-950">
+                            Teachers&rsquo; Comments &amp; Appreciations for Students
+                        </h2>
+                        <p class="text-sm text-slate-700 mt-1">
+                            Heartwarming remarks shared by our faculty for Grade 7B learners. Click any student card above to add a new teacher comment.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="allStudentReviewsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- All student reviews dynamically rendered here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Children's Day Potluck Menu & Global Live Editor Section -->
+        <section id="class-potluck" data-aos="fade-up" data-aos-duration="800" aria-label="Grade 7B Potluck Feast" class="max-w-6xl mx-auto mb-16 scroll-mt-8">
+            <div class="liquid-glass rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-600"></div>
+
+                <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-white/60 pb-6 mb-8 gap-4">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span class="inline-block text-xs font-bold uppercase tracking-widest text-amber-800 bg-white/80 border border-white px-3.5 py-1 rounded-full shadow-sm">
+                                Grade 7B Potluck Feast
+                            </span>
+                            <span id="dishCountBadge" class="inline-block text-xs font-bold text-indigo-950 bg-indigo-100/80 border border-white px-3 py-1 rounded-full">
+                                18 Dishes
+                            </span>
+                        </div>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-indigo-950">
+                            Children&rsquo;s Day Potluck Menu &amp; Teacher Dish Reviews
+                        </h2>
+                        <p class="text-sm text-slate-700 mt-1">
+                            Teachers can review any dish with their name, and everyone can add, rename, or delete dishes globally in real time.
+                        </p>
+                    </div>
+
+                    <button onclick="openAddDishModal()" class="inline-flex items-center gap-2 bg-indigo-950 hover:bg-indigo-900 active:scale-95 text-white font-sans font-semibold text-sm px-5 py-3.5 rounded-full shadow-md border border-white/20 transition cursor-pointer self-start md:self-end">
+                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <span>Add Potluck Dish</span>
+                    </button>
+                </div>
+
+                <!-- Live Potluck Dishes Grid -->
+                <div id="dishesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- Dishes loaded dynamically from Firebase Realtime Database -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Behind the Scenes Section -->
+        <section id="behind-the-scenes" data-aos="fade-up" data-aos-duration="800" aria-label="Behind the Scenes" class="max-w-6xl mx-auto mb-16 scroll-mt-8">
+            <div class="liquid-glass-dark rounded-3xl p-6 sm:p-10 text-white relative overflow-hidden">
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-rose-400 to-indigo-400"></div>
+
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/15 pb-6 mb-8">
+                    <div>
+                        <span class="inline-block text-xs font-bold uppercase tracking-widest text-amber-300 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full mb-2">
+                            Behind the Scenes
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">
+                            Crafting the Grade 7B Children&rsquo;s Day Showcase
+                        </h2>
+                    </div>
+                    <span class="text-xs font-semibold text-indigo-200 bg-white/10 border border-white/15 px-4 py-2 rounded-full self-start md:self-auto">
+                        Aurobana Indian School &bull; Class Initiative
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div data-aos="fade-up" data-aos-delay="100" class="bg-white/10 border border-white/20 rounded-2xl p-5 transition-transform duration-300 hover:-translate-y-1">
+                        <div class="w-10 h-10 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center font-display font-bold text-lg mb-3 border border-amber-300/25">
+                            01
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-white mb-2">Student Roster Curation</h3>
+                        <p class="text-sm text-indigo-100/90 leading-relaxed">
+                            Organizing all 24 students of Grade 7B by roll number so every classmate is honored equally on this special occasion.
+                        </p>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="200" class="bg-white/10 border border-white/20 rounded-2xl p-5 transition-transform duration-300 hover:-translate-y-1">
+                        <div class="w-10 h-10 rounded-xl bg-rose-400/20 text-rose-300 flex items-center justify-center font-display font-bold text-lg mb-3 border border-rose-300/25">
+                            02
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-white mb-2">Live Potluck Coordination</h3>
+                        <p class="text-sm text-indigo-100/90 leading-relaxed">
+                            Building a real-time cloud potluck tracker so students and teachers can seamlessly organize and update every dish for the class celebration.
+                        </p>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="300" class="bg-white/10 border border-white/20 rounded-2xl p-5 transition-transform duration-300 hover:-translate-y-1">
+                        <div class="w-10 h-10 rounded-xl bg-sky-400/20 text-sky-300 flex items-center justify-center font-display font-bold text-lg mb-3 border border-sky-300/25">
+                            03
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-white mb-2">Faculty Tribute &amp; Gratitude</h3>
+                        <p class="text-sm text-indigo-100/90 leading-relaxed">
+                            Dedicated to our Principal, HDC, Class Teacher, and subject educators whose encouragement inspires Grade 7B every single day.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sincere Thanks to Leadership & Teachers Section -->
+        <section id="faculty-thanks" data-aos="fade-up" data-aos-duration="800" aria-label="Sincere Thanks to Teachers" class="max-w-6xl mx-auto scroll-mt-8">
+            <div class="liquid-glass rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-900 via-amber-500 to-rose-600"></div>
+
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <span class="inline-block text-xs font-bold uppercase tracking-widest text-rose-700 bg-white/80 border border-white px-3.5 py-1 rounded-full mb-2 shadow-sm">
+                        With Heartfelt Gratitude
+                    </span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-bold text-indigo-950 mb-3">
+                        Sincere Thanks to Our Leadership &amp; Faculty
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-700">
+                        On behalf of all 24 students of <strong class="text-indigo-950">Grade 7B</strong>, we extend our deepest respect and appreciation to the mentors who guide our academic journey at <strong class="text-indigo-950">Aurobana Indian School</strong>.
+                    </p>
+                </div>
+
+                <!-- School Leadership & Class Teacher Highlights -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+                    <div data-aos="zoom-in-up" data-aos-delay="80" class="liquid-glass-subtle rounded-2xl p-6 text-center border-t-4 border-t-indigo-950 transition-transform duration-300 hover:-translate-y-1">
+                        <span class="inline-block text-[11px] font-bold uppercase tracking-widest text-indigo-900 bg-white/80 border border-white px-3 py-1 rounded-full mb-3">
+                            Principal
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-indigo-950">Ms. Christella</h3>
+                        <p class="text-xs text-slate-600 mt-1.5">Visionary Leadership &amp; Inspiration</p>
+                    </div>
+
+                    <div data-aos="zoom-in-up" data-aos-delay="160" class="liquid-glass-subtle rounded-2xl p-6 text-center border-t-4 border-t-amber-600 transition-transform duration-300 hover:-translate-y-1">
+                        <span class="inline-block text-[11px] font-bold uppercase tracking-widest text-amber-800 bg-white/80 border border-white px-3 py-1 rounded-full mb-3">
+                            Higher Department Coordinator (HDC)
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-indigo-950">Mr. Santhosh</h3>
+                        <p class="text-xs text-slate-600 mt-1.5">Academic Guidance &amp; Support</p>
+                    </div>
+
+                    <div data-aos="zoom-in-up" data-aos-delay="240" class="liquid-glass-subtle rounded-2xl p-6 text-center border-t-4 border-t-rose-600 transition-transform duration-300 hover:-translate-y-1">
+                        <span class="inline-block text-[11px] font-bold uppercase tracking-widest text-rose-700 bg-white/80 border border-white px-3 py-1 rounded-full mb-3">
+                            Class Teacher &amp; Physics
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-indigo-950">Ms. Karthiga</h3>
+                        <p class="text-xs text-slate-600 mt-1.5">Mentorship, Care &amp; Scientific Curiosity</p>
+                    </div>
+                </div>
+
+                <!-- Academic & Co-Curricular Faculty Grid -->
+                <div class="border-t border-white/60 pt-8">
+                    <h3 class="font-display text-lg sm:text-xl font-bold text-indigo-950 text-center mb-6">
+                        Our Dedicated Subject Educators
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div data-aos="fade-up" data-aos-delay="50" class="liquid-glass-subtle rounded-2xl p-4 hover:bg-white/90 transition duration-300 hover:-translate-y-1">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-800 block mb-1">Tamil</span>
+                            <h4 class="font-display text-base font-bold text-indigo-950">Mr. Raja Gopal</h4>
+                        </div>
+
+                        <div data-aos="fade-up" data-aos-delay="100" class="liquid-glass-subtle rounded-2xl p-4 hover:bg-white/90 transition duration-300 hover:-translate-y-1">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-rose-700 block mb-1">Hindi</span>
+                            <h4 class="font-display text-base font-bold text-indigo-950">Ms. Amudha</h4>
+                        </div>
+
+                        <div data-aos="fade-up" data-aos-delay="150" class="liquid-glass-subtle rounded-2xl p-4 hover:bg-white/90 transition duration-300 hover:-translate-y-1">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-900 block mb-1">Mathematics</span>
+                            <h4 class="font-display text-base font-bold text-indigo-950">Ms. Peichiammal</h4>
+                        </div>
+
+                        <div data-aos="fade-up" data-aos-delay="200" class="liquid-glass-subtle rounded-2xl p-4 hover:bg-white/90 transition duration-300 hover:-translate-y-1">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-sky-800 block mb-1">MathBuddy</span>
+                            <h4 class="font-display text-base font-bold text-indigo-950">Ms. Kaviya &amp; Ms. Archana</h4>
+                        </div>
+
+                        <div data-aos="fade-up" data-aos-delay="250" class="liquid-glass-subtle rounded-2xl p-4 hover:bg-white/90 transition duration-300 hover:-translate-y-1">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 block mb-1">English</span>
+                            <h4 class="font-display text-base font-bold text-indigo-950">Mr. Vishwa</h4>
+                        </div>
+
+                        <div data-aos="fade-up" data-aos-delay="300" class="liquid-glass-subtle rounded-2xl p-4 hover:bg-white/90 transition duration-300 hover:-translate-y-1">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-purple-800 block mb-1">Social Science</span>
+                            <h4 class="font-display text-base font-bold text-indigo-950">Ms. Kayal Vizhi</h4>
+                        </div>
+
+                        <div data-aos="fade-up" data-aos-delay="350" class="liquid-glass-subtle rounded-2xl p-4 hover:bg-white/90 transition duration-300 hover:-translate-y-1">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-orange-800 block mb-1">Art</span>
+                            <h4 class="font-display text-base font-bold text-indigo-950">Mr. Ebi</h4>
+                        </div>
+
+                        <div data-aos="fade-up" data-aos-delay="400" class="liquid-glass-subtle rounded-2xl p-4 hover:bg-white/90 transition duration-300 hover:-translate-y-1">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-800 block mb-1">French</span>
+                            <h4 class="font-display text-base font-bold text-indigo-950">Mr. Deepak</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modern Liquid Glass Footer -->
+    <footer class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <div class="liquid-glass-dark rounded-3xl px-6 py-7 text-white relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-rose-400 to-indigo-400"></div>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3 text-center sm:text-left">
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400 shrink-0 hidden sm:inline-block"></span>
+                    <div>
+                        <p class="font-display text-base sm:text-lg font-bold tracking-tight text-white">
+                            Aurobana Indian School
+                        </p>
+                        <p class="text-xs text-indigo-200">
+                            Grade VII &ndash; Section B &bull; Children&rsquo;s Day Showcase
+                        </p>
+                    </div>
+                </div>
+
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full">
+                    <span class="text-xs sm:text-sm font-semibold text-white tracking-wide">
+                        Created by Grade 7B
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Liquid Glass Student & Teacher Review Modal -->
+    <div id="wishModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-indigo-950/45 backdrop-blur-md transition-opacity overflow-y-auto">
+        <div id="modalCard" class="liquid-glass bg-white/95 rounded-3xl max-w-lg w-full p-6 sm:p-8 text-center shadow-2xl transform scale-95 transition-transform duration-200 relative overflow-hidden my-auto max-h-[90vh] overflow-y-auto">
+            <div id="modalBanner" class="h-2 w-full absolute top-0 left-0 bg-gradient-to-r from-indigo-900 via-amber-500 to-rose-600"></div>
+            
+            <button onclick="closeModal()" aria-label="Close modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 hover:bg-white border border-slate-200 flex items-center justify-center text-slate-700 font-semibold transition cursor-pointer shadow-sm">
+                &times;
+            </button>
+
+            <div id="modalRollNo" class="px-5 py-2 mx-auto w-fit rounded-2xl bg-indigo-50 border border-indigo-100 text-indigo-950 font-sans font-bold text-lg tracking-widest mb-3 shadow-sm">
+                Roll No. 7201
+            </div>
+            
+            <span id="modalBadge" class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-900 border border-amber-200 mb-2">
+                Aurobana Indian School &bull; Grade 7B
+            </span>
+
+            <h3 id="modalName" class="font-display text-2xl sm:text-3xl font-bold text-indigo-950 mb-4">
+                Student Name
+            </h3>
+
+            <!-- Existing Teacher Comments for this Student -->
+            <div class="text-left mb-4">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-950">Teachers&rsquo; Comments on Student</span>
+                    <span id="modalStudentCommentCount" class="text-[11px] font-bold text-indigo-800 bg-indigo-100 px-2.5 py-0.5 rounded-full">0</span>
+                </div>
+                <div id="modalStudentCommentsList" class="space-y-2.5 max-h-40 overflow-y-auto pr-1">
+                    <!-- Student comments injected here -->
+                </div>
+            </div>
+
+            <!-- Add Teacher Comment Form -->
+            <form id="studentReviewForm" onsubmit="submitStudentReview(event)" class="text-left space-y-3 bg-indigo-50/80 border border-indigo-200/80 p-4 rounded-2xl mb-4">
+                <span class="block text-xs font-bold uppercase tracking-wider text-indigo-950">
+                    Add Teacher Appreciation / Comment
+                </span>
+                <div>
+                    <label for="teacherReviewerName" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">
+                        Teacher&rsquo;s Name (Required)
+                    </label>
+                    <input type="text" id="teacherReviewerName" required placeholder="e.g., Ms. Karthiga / Mr. Vishwa" class="w-full px-3.5 py-2 rounded-xl bg-white border border-indigo-100 text-sm font-semibold text-indigo-950 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                </div>
+                <div>
+                    <label for="teacherStudentComment" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">
+                        What You Like About This Student
+                    </label>
+                    <textarea id="teacherStudentComment" rows="2" required placeholder="Share what you admire about this student..." class="w-full px-3.5 py-2 rounded-xl bg-white border border-indigo-100 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+                </div>
+                <button type="submit" id="submitStudentReviewBtn" class="w-full bg-indigo-950 hover:bg-indigo-900 text-white font-sans font-semibold text-xs uppercase tracking-wider py-2.5 px-4 rounded-xl shadow transition cursor-pointer">
+                    Post Teacher Comment Globally
+                </button>
+            </form>
+
+            <!-- Live Editable Student Name & Potluck Dish Form -->
+            <details class="text-left bg-slate-50/90 border border-slate-200/80 p-3.5 rounded-2xl mb-5">
+                <summary class="text-xs font-bold uppercase tracking-wider text-slate-700 cursor-pointer select-none">
+                    Edit Student Name or Assigned Dish
+                </summary>
+                <form id="studentEditForm" onsubmit="saveStudentDetails(event)" class="space-y-3 mt-3">
+                    <div>
+                        <label for="editStudentName" class="block text-[11px] font-bold uppercase tracking-wider text-indigo-950 mb-1">
+                            Student Name
+                        </label>
+                        <input type="text" id="editStudentName" required class="w-full px-3.5 py-2 rounded-xl bg-white border border-indigo-100 text-sm font-semibold text-indigo-950 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                    </div>
+                    <div>
+                        <label for="editStudentDish" class="block text-[11px] font-bold uppercase tracking-wider text-amber-900 mb-1">
+                            Potluck Dish Bringing
+                        </label>
+                        <input type="text" id="editStudentDish" placeholder="e.g., Biryani, Chicken 65, Pizza, Ice cream..." class="w-full px-3.5 py-2 rounded-xl bg-white border border-indigo-100 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                    </div>
+                    <button type="submit" id="saveStudentBtn" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-sans font-semibold text-xs uppercase tracking-wider py-2.5 px-4 rounded-xl shadow transition cursor-pointer">
+                        Update Student Info
+                    </button>
+                </form>
+            </details>
+
+            <div class="flex justify-center">
+                <button onclick="closeModal()" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-900 text-white font-sans font-semibold text-sm py-2.5 px-7 rounded-xl shadow-md transition cursor-pointer">
+                    Back to Class Directory
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teacher Dish Review Modal -->
+    <div id="dishReviewModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-indigo-950/45 backdrop-blur-md transition-opacity overflow-y-auto">
+        <div id="dishReviewModalCard" class="liquid-glass bg-white/95 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl transform scale-95 transition-transform duration-200 relative overflow-hidden my-auto max-h-[90vh] overflow-y-auto">
+            <div class="h-2 w-full absolute top-0 left-0 bg-gradient-to-r from-amber-500 via-rose-500 to-indigo-900"></div>
+
+            <button onclick="closeDishReviewModal()" aria-label="Close dish review modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 hover:bg-white border border-slate-200 flex items-center justify-center text-slate-700 font-semibold transition cursor-pointer shadow-sm">
+                &times;
+            </button>
+
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-900 border border-amber-200 mb-2">
+                Teacher Dish Review
+            </span>
+            <h3 id="dishReviewModalTitle" class="font-display text-2xl font-bold text-indigo-950 mb-4">
+                Review Dish
+            </h3>
+
+            <!-- Existing Reviews for this Dish -->
+            <div id="modalDishReviewsList" class="space-y-2 max-h-40 overflow-y-auto mb-4 text-left pr-1">
+                <!-- Dish reviews injected here -->
+            </div>
+
+            <form onsubmit="submitDishReview(event)" class="space-y-3.5 text-left">
+                <input type="hidden" id="reviewTargetDishId">
+                <div>
+                    <label for="dishReviewerTeacherName" class="block text-xs font-bold uppercase tracking-wider text-indigo-950 mb-1">
+                        Teacher&rsquo;s Name (Required)
+                    </label>
+                    <input type="text" id="dishReviewerTeacherName" required placeholder="e.g., Ms. Karthiga / Mr. Raja Gopal" class="w-full px-4 py-2.5 rounded-xl bg-white border border-indigo-100 text-sm font-semibold text-indigo-950 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                </div>
+                <div>
+                    <label for="dishReviewRating" class="block text-xs font-bold uppercase tracking-wider text-indigo-950 mb-1">
+                        Teacher&rsquo;s Rating
+                    </label>
+                    <select id="dishReviewRating" class="w-full px-4 py-2.5 rounded-xl bg-white border border-indigo-100 text-sm font-semibold text-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                        <option value="5/5 - Delicious &amp; Superb">5/5 - Delicious &amp; Superb</option>
+                        <option value="4.5/5 - Very Tasty">4.5/5 - Very Tasty</option>
+                        <option value="4/5 - Wonderful Treat">4/5 - Wonderful Treat</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="dishReviewComment" class="block text-xs font-bold uppercase tracking-wider text-indigo-950 mb-1">
+                        Review Comment
+                    </label>
+                    <textarea id="dishReviewComment" rows="2" required placeholder="Write your review about this potluck dish..." class="w-full px-4 py-2.5 rounded-xl bg-white border border-indigo-100 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+                </div>
+                <div class="flex items-center gap-3 pt-2">
+                    <button type="button" onclick="closeDishReviewModal()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm py-3 rounded-xl transition cursor-pointer">
+                        Cancel
+                    </button>
+                    <button type="submit" class="w-1/2 bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-3 rounded-xl shadow transition cursor-pointer">
+                        Post Review
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add / Edit Potluck Dish Modal -->
+    <div id="dishModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-indigo-950/45 backdrop-blur-md transition-opacity">
+        <div id="dishModalCard" class="liquid-glass bg-white/95 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl transform scale-95 transition-transform duration-200 relative overflow-hidden">
+            <div class="h-2 w-full absolute top-0 left-0 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-600"></div>
+
+            <button onclick="closeDishModal()" aria-label="Close dish modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 hover:bg-white border border-slate-200 flex items-center justify-center text-slate-700 font-semibold transition cursor-pointer shadow-sm">
+                &times;
+            </button>
+
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-900 border border-amber-200 mb-2">
+                Grade 7B Potluck Feast
+            </span>
+            <h3 id="dishModalTitle" class="font-display text-2xl font-bold text-indigo-950 mb-5">
+                Add Potluck Dish
+            </h3>
+
+            <form onsubmit="saveDishItem(event)" class="space-y-4 text-left">
+                <input type="hidden" id="dishIdInput">
+                <div>
+                    <label for="dishNameInput" class="block text-xs font-bold uppercase tracking-wider text-indigo-950 mb-1">Dish Name</label>
+                    <input type="text" id="dishNameInput" required placeholder="e.g., Chicken 65 / Kothu porata / Cake" class="w-full px-4 py-2.5 rounded-xl bg-white border border-indigo-100 text-sm font-semibold text-indigo-950 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                </div>
+                <div>
+                    <label for="dishBroughtByInput" class="block text-xs font-bold uppercase tracking-wider text-indigo-950 mb-1">Brought By (Student / Roll No.)</label>
+                    <input type="text" id="dishBroughtByInput" required placeholder="e.g., Darwin (7201) or Grade 7B" class="w-full px-4 py-2.5 rounded-xl bg-white border border-indigo-100 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                </div>
+                <div>
+                    <label for="dishCategoryInput" class="block text-xs font-bold uppercase tracking-wider text-indigo-950 mb-1">Category</label>
+                    <select id="dishCategoryInput" class="w-full px-4 py-2.5 rounded-xl bg-white border border-indigo-100 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                        <option value="Main Course &amp; Breads">Main Course &amp; Breads</option>
+                        <option value="Starters &amp; Snacks">Starters &amp; Snacks</option>
+                        <option value="Desserts &amp; Drinks">Desserts &amp; Drinks</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-3 pt-2">
+                    <button type="button" onclick="closeDishModal()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm py-3 rounded-xl transition cursor-pointer">
+                        Cancel
+                    </button>
+                    <button type="submit" class="w-1/2 bg-indigo-950 hover:bg-indigo-900 text-white font-semibold text-sm py-3 rounded-xl shadow transition cursor-pointer">
+                        Save Globally
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal (No browser confirm() used) -->
+    <div id="deleteConfirmModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-indigo-950/45 backdrop-blur-md">
+        <div class="liquid-glass bg-white/95 rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl relative overflow-hidden">
+            <div class="h-1.5 w-full absolute top-0 left-0 bg-rose-600"></div>
+            <h3 class="font-display text-xl font-bold text-indigo-950 mb-2">Remove Potluck Dish?</h3>
+            <p id="deleteConfirmText" class="text-sm text-slate-600 mb-5">Are you sure you want to remove this dish from the global potluck menu?</p>
+            <div class="flex items-center gap-3">
+                <button type="button" onclick="closeDeleteModal()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm py-2.5 rounded-xl transition cursor-pointer">
+                    Cancel
+                </button>
+                <button type="button" id="confirmDeleteBtn" class="w-1/2 bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm py-2.5 rounded-xl shadow transition cursor-pointer">
+                    Delete Dish
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Banner -->
+    <div id="toastBanner" class="fixed bottom-6 right-6 z-50 hidden items-center gap-2.5 bg-indigo-950 text-white text-xs font-semibold px-5 py-3.5 rounded-2xl shadow-xl border border-white/20">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span id="toastText">Saved globally!</span>
+    </div>
+
+    <script type="module">
+        // Import Firebase App, Analytics & Realtime Database (asia-southeast1) SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getDatabase, ref, set, push, remove, onValue } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
+
+        // Your web app's Firebase configuration with Realtime Database in asia-southeast1
+        const firebaseConfig = {
+            apiKey: "AIzaSyB81Z2c6rcs26lMY058-XrdZuz83Rpz9Ao",
+            authDomain: "mourish-genbus.firebaseapp.com",
+            databaseURL: "https://mourish-genbus-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "mourish-genbus",
+            storageBucket: "mourish-genbus.firebasestorage.app",
+            messagingSenderId: "197392397360",
+            appId: "1:197392397360:web:d6f64e781f53553a4869f5",
+            measurementId: "G-PLV0LGV7ZV"
+        };
+
+        // Initialize Firebase App & Realtime Database (asia-southeast1)
+        const app = initializeApp(firebaseConfig);
+        const rtdb = getDatabase(app);
+        const appRootPath = "grade7b_aurobana";
+
+        // Default list of 24 Grade 7B students in exact given order with Roll Numbers 7201-7224
+        const defaultStudents = [
+            { rollNo: "7201", name: "Darwin", dish: "", color: "from-amber-400 to-orange-500" },
+            { rollNo: "7202", name: "Dhanvanth", dish: "", color: "from-sky-400 to-indigo-500" },
+            { rollNo: "7203", name: "Guru", dish: "", color: "from-emerald-400 to-teal-600" },
+            { rollNo: "7204", name: "Harshan", dish: "", color: "from-orange-400 to-red-500" },
+            { rollNo: "7205", name: "Jayasudhan", dish: "", color: "from-rose-400 to-pink-600" },
+            { rollNo: "7206", name: "Joshua", dish: "", color: "from-indigo-400 to-purple-600" },
+            { rollNo: "7207", name: "Junaid", dish: "", color: "from-teal-400 to-cyan-600" },
+            { rollNo: "7208", name: "Mourish Nithin", dish: "", color: "from-violet-400 to-fuchsia-600" },
+            { rollNo: "7209", name: "Raja", dish: "", color: "from-amber-500 to-yellow-600" },
+            { rollNo: "7210", name: "Rishwanth", dish: "", color: "from-blue-400 to-indigo-600" },
+            { rollNo: "7211", name: "Sanjeev", dish: "", color: "from-green-400 to-emerald-600" },
+            { rollNo: "7212", name: "Aboorva", dish: "", color: "from-pink-400 to-rose-500" },
+            { rollNo: "7213", name: "Akshaya", dish: "", color: "from-purple-400 to-indigo-500" },
+            { rollNo: "7214", name: "Alayna", dish: "", color: "from-cyan-400 to-sky-600" },
+            { rollNo: "7215", name: "Aradhana", dish: "", color: "from-fuchsia-400 to-pink-600" },
+            { rollNo: "7216", name: "Dhanu", dish: "", color: "from-yellow-400 to-amber-500" },
+            { rollNo: "7217", name: "Divya", dish: "", color: "from-rose-400 to-red-500" },
+            { rollNo: "7218", name: "Harlina", dish: "", color: "from-teal-400 to-emerald-500" },
+            { rollNo: "7219", name: "Kayal", dish: "", color: "from-blue-400 to-cyan-500" },
+            { rollNo: "7220", name: "Meena", dish: "", color: "from-indigo-400 to-blue-600" },
+            { rollNo: "7221", name: "Pooja", dish: "", color: "from-amber-400 to-pink-500" },
+            { rollNo: "7222", name: "Prithika", dish: "", color: "from-emerald-400 to-green-600" },
+            { rollNo: "7223", name: "Thithiksha", dish: "", color: "from-violet-400 to-purple-600" },
+            { rollNo: "7224", name: "Yazhini", dish: "", color: "from-pink-500 to-amber-500" }
+        ];
+
+        // Default 18 Potluck Dishes for Grade 7B Children's Day Feast
+        const defaultPotluckDishes = [
+            { id: "potluck-01", order: 1, name: "Parato", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" },
+            { id: "potluck-02", order: 2, name: "Chicken butter masala", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" },
+            { id: "potluck-03", order: 3, name: "Pizza", broughtBy: "Grade 7B Potluck", category: "Starters & Snacks" },
+            { id: "potluck-04", order: 4, name: "Momos", broughtBy: "Grade 7B Potluck", category: "Starters & Snacks" },
+            { id: "potluck-05", order: 5, name: "Veg noodles", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" },
+            { id: "potluck-06", order: 6, name: "Chicken 65", broughtBy: "Grade 7B Potluck", category: "Starters & Snacks" },
+            { id: "potluck-07", order: 7, name: "Biryani", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" },
+            { id: "potluck-08", order: 8, name: "Naan", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" },
+            { id: "potluck-09", order: 9, name: "Chilli porata", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" },
+            { id: "potluck-10", order: 10, name: "Kothu porata", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" },
+            { id: "potluck-11", order: 11, name: "Cutlet", broughtBy: "Grade 7B Potluck", category: "Starters & Snacks" },
+            { id: "potluck-12", order: 12, name: "Cake", broughtBy: "Grade 7B Potluck", category: "Desserts & Drinks" },
+            { id: "potluck-13", order: 13, name: "Chicken fried rice", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" },
+            { id: "potluck-14", order: 14, name: "Juice", broughtBy: "Grade 7B Potluck", category: "Desserts & Drinks" },
+            { id: "potluck-15", order: 15, name: "Ice cream", broughtBy: "Grade 7B Potluck", category: "Desserts & Drinks" },
+            { id: "potluck-16", order: 16, name: "Paneer butter masala", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" },
+            { id: "potluck-17", order: 17, name: "Chapatti", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" },
+            { id: "potluck-18", order: 18, name: "Chicken gravy", broughtBy: "Grade 7B Potluck", category: "Main Course & Breads" }
+        ];
+
+        let childrenList = [...defaultStudents];
+        let dishesList = [...defaultPotluckDishes];
+        let studentReviewsMap = {}; // { rollNo: [ { id, teacherName, comment, timestamp } ] }
+        let dishReviewsMap = {};    // { dishId: [ { id, teacherName, rating, comment, timestamp } ] }
+        let activeStudent = null;
+        let pendingDeleteDishId = null;
+
+        const starsGrid = document.getElementById('starsGrid');
+        const dishesGrid = document.getElementById('dishesGrid');
+        const allStudentReviewsGrid = document.getElementById('allStudentReviewsGrid');
+        const noResults = document.getElementById('noResults');
+
+        function escapeHtml(str) {
+            return String(str ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function showToast(message) {
+            const banner = document.getElementById('toastBanner');
+            const text = document.getElementById('toastText');
+            if (!banner || !text) return;
+            text.textContent = message;
+            banner.classList.remove('hidden');
+            banner.classList.add('flex');
+            clearTimeout(window.__toastTimer);
+            window.__toastTimer = setTimeout(() => {
+                banner.classList.add('hidden');
+                banner.classList.remove('flex');
+            }, 3000);
+        }
+
+        // Render Student Cards with Roll Number, Name, Dish Badge & Teacher Note Count
+        function renderCards(data) {
+            const fragment = document.createDocumentFragment();
+
+            if (data.length === 0) {
+                starsGrid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            data.forEach((child) => {
+                const card = document.createElement('button');
+                card.type = 'button';
+                card.className = `star-card group relative rounded-2xl p-5 flex flex-col items-center justify-center text-center cursor-pointer overflow-hidden focus:outline-none focus:ring-2 focus:ring-indigo-400`;
+                card.onclick = () => window.openWishModal(child);
+
+                const reviewsForStudent = studentReviewsMap[child.rollNo] || [];
+                const reviewBadge = reviewsForStudent.length > 0
+                    ? `<span class="mt-2 inline-block px-3 py-0.5 rounded-full text-[11px] font-bold bg-indigo-950 text-white shadow-sm">${reviewsForStudent.length} Teacher ${reviewsForStudent.length === 1 ? 'Note' : 'Notes'}</span>`
+                    : `<span class="mt-2 inline-block px-3 py-0.5 rounded-full text-[11px] font-medium bg-white/80 text-slate-600 border border-slate-200/70">Tap to review or view notes</span>`;
+
+                const dishTag = child.dish && child.dish.trim() !== ''
+                    ? `<span class="mt-2 inline-block px-3 py-0.5 rounded-full text-[11px] font-semibold bg-amber-100/90 text-amber-900 border border-amber-200/80">Dish: ${escapeHtml(child.dish)}</span>`
+                    : '';
+
+                card.innerHTML = `
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${child.color}"></div>
+                    
+                    <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest bg-indigo-50/90 border border-indigo-100 text-indigo-950 mb-3 transition-transform duration-200 group-hover:scale-105">
+                        ${escapeHtml(child.rollNo)}
+                    </span>
+
+                    <h3 class="font-display text-xl font-bold text-indigo-950 group-hover:text-amber-700 transition-colors">
+                        ${escapeHtml(child.name)}
+                    </h3>
+                    ${dishTag}
+                    ${reviewBadge}
+                `;
+
+                fragment.appendChild(card);
+            });
+
+            starsGrid.innerHTML = '';
+            starsGrid.appendChild(fragment);
+        }
+
+        // Render All Teachers' Comments on Students at the bottom of the Student Directory
+        function renderAllStudentReviewsWall() {
+            const allEntries = [];
+            Object.keys(studentReviewsMap).forEach(rollNo => {
+                const studentObj = childrenList.find(s => s.rollNo === rollNo);
+                const studentName = studentObj ? studentObj.name : `Roll No. ${rollNo}`;
+                const list = studentReviewsMap[rollNo] || [];
+                list.forEach(rev => {
+                    allEntries.push({
+                        rollNo,
+                        studentName,
+                        ...rev
+                    });
+                });
+            });
+
+            allEntries.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
+            const badge = document.getElementById('studentReviewCountBadge');
+            if (badge) {
+                badge.textContent = `${allEntries.length} ${allEntries.length === 1 ? 'Review' : 'Reviews'}`;
+            }
+
+            if (!allStudentReviewsGrid) return;
+            allStudentReviewsGrid.innerHTML = '';
+
+            if (allEntries.length === 0) {
+                allStudentReviewsGrid.innerHTML = `
+                    <div class="col-span-full text-center py-10 liquid-glass-subtle rounded-2xl">
+                        <p class="font-display text-lg font-bold text-indigo-950">No teacher reviews posted yet</p>
+                        <p class="text-xs text-slate-600 mt-1">Click any student card above to write what you appreciate about them.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            allEntries.forEach((entry, index) => {
+                const card = document.createElement('div');
+                card.className = 'liquid-glass-subtle rounded-2xl p-5 flex flex-col justify-between hover:bg-white/80 transition relative overflow-hidden';
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', String((index % 3) * 80));
+                card.innerHTML = `
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-900 to-rose-600"></div>
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-2.5">
+                            <span class="text-xs font-bold text-indigo-950 bg-white/90 border border-white px-3 py-1 rounded-full shadow-sm">
+                                ${escapeHtml(entry.studentName)} &bull; ${escapeHtml(entry.rollNo)}
+                            </span>
+                        </div>
+                        <p class="text-sm text-slate-800 leading-relaxed italic mb-3">
+                            &ldquo;${escapeHtml(entry.comment)}&rdquo;
+                        </p>
+                    </div>
+                    <div class="border-t border-white/70 pt-2.5 flex items-center justify-between text-xs">
+                        <span class="font-bold text-amber-900">&mdash; ${escapeHtml(entry.teacherName)}</span>
+                        <span class="text-[11px] text-slate-500">Faculty Review</span>
+                    </div>
+                `;
+                allStudentReviewsGrid.appendChild(card);
+            });
+        }
+
+        // Render Potluck Dishes Grid with Global Edit, Delete & Teacher Dish Reviews
+        function renderDishes() {
+            const countBadge = document.getElementById('dishCountBadge');
+            if (countBadge) {
+                countBadge.textContent = `${dishesList.length} ${dishesList.length === 1 ? 'Dish' : 'Dishes'}`;
+            }
+
+            if (dishesList.length === 0) {
+                dishesGrid.innerHTML = `
+                    <div class="col-span-full text-center py-10 liquid-glass-subtle rounded-2xl">
+                        <p class="font-display text-lg font-bold text-indigo-950">No potluck dishes listed yet</p>
+                        <p class="text-xs text-slate-600 mt-1">Click "Add Potluck Dish" above to add an item to the global menu.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const fragment = document.createDocumentFragment();
+
+            dishesList.forEach((dish, idx) => {
+                const reviews = dishReviewsMap[dish.id] || [];
+                const reviewsHtml = reviews.length > 0
+                    ? `
+                        <div class="mt-3 pt-3 border-t border-slate-200/70 space-y-2">
+                            <span class="block text-[10px] font-bold uppercase tracking-wider text-indigo-900">
+                                Teachers&rsquo; Reviews (${reviews.length})
+                            </span>
+                            ${reviews.map(r => `
+                                <div class="bg-white/90 border border-slate-100 rounded-xl p-2.5 text-xs">
+                                    <div class="flex items-center justify-between gap-1 mb-0.5">
+                                        <span class="font-bold text-indigo-950">${escapeHtml(r.teacherName)}</span>
+                                        <span class="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">${escapeHtml(r.rating || '5/5')}</span>
+                                    </div>
+                                    <p class="text-slate-700 leading-snug">&ldquo;${escapeHtml(r.comment)}&rdquo;</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `
+                    : `<p class="mt-3 pt-2.5 border-t border-slate-200/60 text-[11px] text-slate-500 italic">No teacher dish reviews yet &mdash; be the first to review!</p>`;
+
+                const item = document.createElement('div');
+                item.className = 'liquid-glass-subtle rounded-2xl p-5 flex flex-col justify-between hover:bg-white transition-transform duration-200 hover:-translate-y-1 relative overflow-hidden';
+                item.innerHTML = `
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-rose-500 opacity-75"></div>
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-2.5">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-200/70 px-2.5 py-0.5 rounded-full">
+                                #${idx + 1} &bull; ${escapeHtml(dish.category || 'Potluck Dish')}
+                            </span>
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="window.editDishItem('${escapeHtml(dish.id)}')" title="Edit Dish Name or Details" class="px-2.5 py-1 rounded-lg bg-white hover:bg-indigo-950 hover:text-white text-indigo-950 text-xs font-semibold border border-slate-200 transition cursor-pointer">
+                                    Edit
+                                </button>
+                                <button onclick="window.promptDeleteDish('${escapeHtml(dish.id)}', '${escapeHtml(dish.name)}')" title="Delete Dish Globally" class="px-2.5 py-1 rounded-lg bg-white hover:bg-rose-600 hover:text-white text-rose-700 text-xs font-semibold border border-slate-200 transition cursor-pointer">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-indigo-950 mb-1">
+                            ${escapeHtml(dish.name)}
+                        </h3>
+                        <p class="text-xs font-medium text-slate-600 mb-3">
+                            Contributor: <strong class="text-indigo-950">${escapeHtml(dish.broughtBy || 'Grade 7B')}</strong>
+                        </p>
+                        <button onclick="window.openDishReviewModal('${escapeHtml(dish.id)}')" class="w-full py-2 px-3 rounded-xl bg-amber-500/15 hover:bg-amber-600 text-amber-950 hover:text-white border border-amber-300/70 text-xs font-bold transition cursor-pointer">
+                            + Teacher Review Dish
+                        </button>
+                        ${reviewsHtml}
+                    </div>
+                `;
+                fragment.appendChild(item);
+            });
+
+            dishesGrid.innerHTML = '';
+            dishesGrid.appendChild(fragment);
+        }
+
+        // Filter Functionality (Search by Name, Roll Number, or Dish)
+        window.filterStars = function() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filtered = childrenList.filter(child => 
+                child.name.toLowerCase().includes(query) ||
+                child.rollNo.includes(query) ||
+                (child.dish && child.dish.toLowerCase().includes(query))
+            );
+            renderCards(filtered);
+        };
+
+        // Student Modal Interactions
+        const wishModal = document.getElementById('wishModal');
+        const modalCard = document.getElementById('modalCard');
+
+        function renderModalStudentComments(rollNo) {
+            const listEl = document.getElementById('modalStudentCommentsList');
+            const countEl = document.getElementById('modalStudentCommentCount');
+            const reviews = studentReviewsMap[rollNo] || [];
+            if (countEl) countEl.textContent = reviews.length;
+            if (!listEl) return;
+
+            if (reviews.length === 0) {
+                listEl.innerHTML = `<p class="text-xs text-slate-500 italic bg-slate-50 border border-slate-200/70 rounded-xl p-3">No teacher comments for this student yet. Write the first appreciation below!</p>`;
+                return;
+            }
+
+            listEl.innerHTML = reviews.map(r => `
+                <div class="bg-white border border-indigo-100 rounded-xl p-3 shadow-sm">
+                    <p class="text-xs text-slate-800 italic mb-1">&ldquo;${escapeHtml(r.comment)}&rdquo;</p>
+                    <span class="block text-[11px] font-bold text-indigo-950">&mdash; ${escapeHtml(r.teacherName)}</span>
+                </div>
+            `).join('');
+        }
+
+        window.openWishModal = function(child) {
+            activeStudent = child;
+            document.getElementById('modalRollNo').textContent = `Roll No. ${child.rollNo}`;
+            document.getElementById('modalBadge').textContent = 'Aurobana Indian School \u2022 Grade 7B';
+            document.getElementById('modalName').textContent = child.name;
+            document.getElementById('editStudentName').value = child.name;
+            document.getElementById('editStudentDish').value = child.dish || '';
+            document.getElementById('teacherStudentComment').value = '';
+            renderModalStudentComments(child.rollNo);
+            
+            const banner = document.getElementById('modalBanner');
+            banner.className = `h-2 w-full absolute top-0 left-0 bg-gradient-to-r ${child.color}`;
+
+            wishModal.classList.remove('hidden');
+            wishModal.classList.add('flex');
+            
+            requestAnimationFrame(() => {
+                modalCard.classList.remove('scale-95');
+                modalCard.classList.add('scale-100');
+            });
+
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 24,
+                    spread: 50,
+                    ticks: 110,
+                    origin: { y: 0.65 },
+                    colors: ['#1E1B4B', '#D97706', '#BE123C', '#0D9488']
+                });
+            }
+        };
+
+        window.closeModal = function() {
+            modalCard.classList.remove('scale-100');
+            modalCard.classList.add('scale-95');
+            setTimeout(() => {
+                wishModal.classList.add('hidden');
+                wishModal.classList.remove('flex');
+            }, 150);
+        };
+
+        // Submit Teacher Appreciation / Review for a Student to Firebase Realtime Database
+        window.submitStudentReview = async function(e) {
+            e.preventDefault();
+            if (!activeStudent) return;
+
+            const teacherName = document.getElementById('teacherReviewerName').value.trim();
+            const comment = document.getElementById('teacherStudentComment').value.trim();
+            if (!teacherName || !comment) return;
+
+            const btn = document.getElementById('submitStudentReviewBtn');
+            btn.disabled = true;
+            btn.textContent = 'Posting Review...';
+
+            const reviewData = {
+                teacherName,
+                comment,
+                timestamp: Date.now()
+            };
+
+            try {
+                const reviewsRef = ref(rtdb, `${appRootPath}/student_reviews/${activeStudent.rollNo}`);
+                await push(reviewsRef, reviewData);
+                document.getElementById('teacherStudentComment').value = '';
+                showToast(`Teacher review posted for ${activeStudent.name}!`);
+            } catch (err) {
+                console.error('Error posting student review:', err);
+                const list = studentReviewsMap[activeStudent.rollNo] || [];
+                list.push({ id: `local-${Date.now()}`, ...reviewData });
+                studentReviewsMap[activeStudent.rollNo] = list;
+                renderModalStudentComments(activeStudent.rollNo);
+                renderAllStudentReviewsWall();
+                window.filterStars();
+                showToast('Review saved locally');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Post Teacher Comment Globally';
+            }
+        };
+
+        // Save Student Name / Potluck Dish Edit to Firebase Realtime Database Globally
+        window.saveStudentDetails = async function(e) {
+            e.preventDefault();
+            if (!activeStudent) return;
+
+            const updatedName = document.getElementById('editStudentName').value.trim();
+            const updatedDish = document.getElementById('editStudentDish').value.trim();
+            if (!updatedName) return;
+
+            const btn = document.getElementById('saveStudentBtn');
+            btn.textContent = 'Saving Globally...';
+            btn.disabled = true;
+
+            try {
+                childrenList = childrenList.map(s =>
+                    s.rollNo === activeStudent.rollNo
+                        ? { ...s, name: updatedName, dish: updatedDish }
+                        : s
+                );
+                document.getElementById('modalName').textContent = updatedName;
+                window.filterStars();
+                renderAllStudentReviewsWall();
+
+                const studentRef = ref(rtdb, `${appRootPath}/students/${activeStudent.rollNo}`);
+                await set(studentRef, {
+                    rollNo: activeStudent.rollNo,
+                    name: updatedName,
+                    dish: updatedDish,
+                    color: activeStudent.color
+                });
+                showToast(`Updated ${updatedName} in Realtime DB!`);
+            } catch (err) {
+                console.error('Error saving student details:', err);
+                showToast('Saved locally');
+            } finally {
+                btn.textContent = 'Update Student Info';
+                btn.disabled = false;
+            }
+        };
+
+        // Teacher Dish Review Modal Interactions
+        const dishReviewModal = document.getElementById('dishReviewModal');
+        const dishReviewModalCard = document.getElementById('dishReviewModalCard');
+
+        function renderModalDishReviews(dishId) {
+            const listEl = document.getElementById('modalDishReviewsList');
+            const reviews = dishReviewsMap[dishId] || [];
+            if (!listEl) return;
+
+            if (reviews.length === 0) {
+                listEl.innerHTML = `<p class="text-xs text-slate-500 italic bg-slate-50 border border-slate-200/70 rounded-xl p-3">No reviews for this dish yet. Share your feedback below!</p>`;
+                return;
+            }
+
+            listEl.innerHTML = reviews.map(r => `
+                <div class="bg-amber-50/70 border border-amber-200/80 rounded-xl p-2.5 text-xs">
+                    <div class="flex items-center justify-between mb-0.5">
+                        <span class="font-bold text-indigo-950">${escapeHtml(r.teacherName)}</span>
+                        <span class="text-[10px] font-bold text-amber-900">${escapeHtml(r.rating || '5/5')}</span>
+                    </div>
+                    <p class="text-slate-700 italic">&ldquo;${escapeHtml(r.comment)}&rdquo;</p>
+                </div>
+            `).join('');
+        }
+
+        window.openDishReviewModal = function(dishId) {
+            const dish = dishesList.find(d => d.id === dishId);
+            if (!dish) return;
+
+            document.getElementById('reviewTargetDishId').value = dishId;
+            document.getElementById('dishReviewModalTitle').textContent = `Review: ${dish.name}`;
+            document.getElementById('dishReviewComment').value = '';
+            renderModalDishReviews(dishId);
+
+            dishReviewModal.classList.remove('hidden');
+            dishReviewModal.classList.add('flex');
+            requestAnimationFrame(() => {
+                dishReviewModalCard.classList.remove('scale-95');
+                dishReviewModalCard.classList.add('scale-100');
+            });
+        };
+
+        window.closeDishReviewModal = function() {
+            dishReviewModalCard.classList.remove('scale-100');
+            dishReviewModalCard.classList.add('scale-95');
+            setTimeout(() => {
+                dishReviewModal.classList.add('hidden');
+                dishReviewModal.classList.remove('flex');
+            }, 150);
+        };
+
+        window.submitDishReview = async function(e) {
+            e.preventDefault();
+            const dishId = document.getElementById('reviewTargetDishId').value;
+            const teacherName = document.getElementById('dishReviewerTeacherName').value.trim();
+            const rating = document.getElementById('dishReviewRating').value;
+            const comment = document.getElementById('dishReviewComment').value.trim();
+            if (!dishId || !teacherName || !comment) return;
+
+            const reviewData = {
+                teacherName,
+                rating,
+                comment,
+                timestamp: Date.now()
+            };
+
+            try {
+                const reviewsRef = ref(rtdb, `${appRootPath}/dish_reviews/${dishId}`);
+                await push(reviewsRef, reviewData);
+                document.getElementById('dishReviewComment').value = '';
+                showToast('Dish review posted globally!');
+            } catch (err) {
+                console.error('Error posting dish review:', err);
+                const list = dishReviewsMap[dishId] || [];
+                list.push({ id: `local-${Date.now()}`, ...reviewData });
+                dishReviewsMap[dishId] = list;
+                renderModalDishReviews(dishId);
+                renderDishes();
+                showToast('Dish review saved locally');
+            }
+        };
+
+        // Potluck Dish Modal Controls
+        const dishModal = document.getElementById('dishModal');
+        const dishModalCard = document.getElementById('dishModalCard');
+
+        window.openAddDishModal = function() {
+            document.getElementById('dishModalTitle').textContent = 'Add Potluck Dish';
+            document.getElementById('dishIdInput').value = '';
+            document.getElementById('dishNameInput').value = '';
+            document.getElementById('dishBroughtByInput').value = 'Grade 7B Potluck';
+            document.getElementById('dishCategoryInput').value = 'Main Course & Breads';
+
+            dishModal.classList.remove('hidden');
+            dishModal.classList.add('flex');
+            requestAnimationFrame(() => {
+                dishModalCard.classList.remove('scale-95');
+                dishModalCard.classList.add('scale-100');
+            });
+        };
+
+        window.editDishItem = function(id) {
+            const dish = dishesList.find(d => d.id === id);
+            if (!dish) return;
+            document.getElementById('dishModalTitle').textContent = 'Edit Potluck Dish';
+            document.getElementById('dishIdInput').value = dish.id;
+            document.getElementById('dishNameInput').value = dish.name;
+            document.getElementById('dishBroughtByInput').value = dish.broughtBy || 'Grade 7B Potluck';
+            document.getElementById('dishCategoryInput').value = dish.category || 'Main Course & Breads';
+
+            dishModal.classList.remove('hidden');
+            dishModal.classList.add('flex');
+            requestAnimationFrame(() => {
+                dishModalCard.classList.remove('scale-95');
+                dishModalCard.classList.add('scale-100');
+            });
+        };
+
+        window.closeDishModal = function() {
+            dishModalCard.classList.remove('scale-100');
+            dishModalCard.classList.add('scale-95');
+            setTimeout(() => {
+                dishModal.classList.add('hidden');
+                dishModal.classList.remove('flex');
+            }, 150);
+        };
+
+        window.saveDishItem = async function(e) {
+            e.preventDefault();
+            const existingId = document.getElementById('dishIdInput').value;
+            const id = existingId || `potluck-${Date.now()}`;
+            const name = document.getElementById('dishNameInput').value.trim();
+            const broughtBy = document.getElementById('dishBroughtByInput').value.trim() || 'Grade 7B Potluck';
+            const category = document.getElementById('dishCategoryInput').value;
+
+            if (!name) return;
+
+            const existingDish = dishesList.find(d => d.id === id);
+            const order = existingDish && typeof existingDish.order === 'number'
+                ? existingDish.order
+                : dishesList.length + 1;
+
+            const newDish = { id, order, name, broughtBy, category };
+            if (existingId) {
+                dishesList = dishesList.map(d => d.id === id ? newDish : d);
+            } else {
+                dishesList.push(newDish);
+            }
+            renderDishes();
+            closeDishModal();
+
+            try {
+                const dishRef = ref(rtdb, `${appRootPath}/potluck_dishes/${id}`);
+                await set(dishRef, newDish);
+                showToast(existingId ? `"${name}" updated in Realtime DB!` : `"${name}" added in Realtime DB!`);
+            } catch (err) {
+                console.error('Error saving dish:', err);
+                showToast('Dish updated locally');
+            }
+        };
+
+        // Custom Delete Confirmation Modal
+        const deleteConfirmModal = document.getElementById('deleteConfirmModal');
+        window.promptDeleteDish = function(id, name) {
+            pendingDeleteDishId = id;
+            document.getElementById('deleteConfirmText').textContent = `Remove "${name}" from the Grade 7B global potluck menu?`;
+            deleteConfirmModal.classList.remove('hidden');
+            deleteConfirmModal.classList.add('flex');
+        };
+
+        window.closeDeleteModal = function() {
+            pendingDeleteDishId = null;
+            deleteConfirmModal.classList.add('hidden');
+            deleteConfirmModal.classList.remove('flex');
+        };
+
+        document.getElementById('confirmDeleteBtn').addEventListener('click', async () => {
+            if (!pendingDeleteDishId) return;
+            const id = pendingDeleteDishId;
+            closeDeleteModal();
+
+            dishesList = dishesList.filter(d => d.id !== id);
+            renderDishes();
+
+            try {
+                const dishRef = ref(rtdb, `${appRootPath}/potluck_dishes/${id}`);
+                await remove(dishRef);
+                showToast('Dish deleted from Realtime DB!');
+            } catch (err) {
+                console.error('Error deleting dish:', err);
+                showToast('Dish removed locally');
+            }
+        });
+
+        // Close modals on outside click
+        wishModal.addEventListener('click', (e) => {
+            if (e.target === wishModal) closeModal();
+        });
+        dishReviewModal.addEventListener('click', (e) => {
+            if (e.target === dishReviewModal) closeDishReviewModal();
+        });
+        dishModal.addEventListener('click', (e) => {
+            if (e.target === dishModal) closeDishModal();
+        });
+        deleteConfirmModal.addEventListener('click', (e) => {
+            if (e.target === deleteConfirmModal) closeDeleteModal();
+        });
+
+        // Sync Live with Firebase Realtime Database (asia-southeast1)
+        function initRealtimeDatabaseSync() {
+            renderCards(childrenList);
+            renderAllStudentReviewsWall();
+            renderDishes();
+
+            try {
+                // 1. Listen to global student overrides
+                const studentsRef = ref(rtdb, `${appRootPath}/students`);
+                onValue(studentsRef, (snapshot) => {
+                    const data = snapshot.val();
+                    if (data) {
+                        childrenList = defaultStudents.map(s =>
+                            data[s.rollNo] ? { ...s, ...data[s.rollNo] } : s
+                        );
+                        window.filterStars();
+                        renderAllStudentReviewsWall();
+                    }
+                }, (error) => {
+                    console.error('Realtime DB student sync error:', error);
+                });
+
+                // 2. Listen to global student reviews by teachers
+                const studentReviewsRef = ref(rtdb, `${appRootPath}/student_reviews`);
+                onValue(studentReviewsRef, (snapshot) => {
+                    const data = snapshot.val() || {};
+                    const parsedMap = {};
+                    Object.keys(data).forEach(rollNo => {
+                        const entries = data[rollNo] || {};
+                        parsedMap[rollNo] = Object.keys(entries).map(key => ({
+                            id: key,
+                            ...entries[key]
+                        }));
+                    });
+                    studentReviewsMap = parsedMap;
+                    window.filterStars();
+                    renderAllStudentReviewsWall();
+                    if (activeStudent) {
+                        renderModalStudentComments(activeStudent.rollNo);
+                    }
+                }, (error) => {
+                    console.error('Realtime DB student reviews sync error:', error);
+                });
+
+                // 3. Listen to global potluck dishes (Add, Edit/Rename, Delete)
+                const dishesRef = ref(rtdb, `${appRootPath}/potluck_dishes`);
+                let hasSeeded = false;
+                onValue(dishesRef, async (snapshot) => {
+                    const data = snapshot.val();
+                    if (!data && !hasSeeded) {
+                        hasSeeded = true;
+                        const initialObj = {};
+                        defaultPotluckDishes.forEach(item => {
+                            initialObj[item.id] = item;
+                        });
+                        await set(dishesRef, initialObj);
+                    } else if (data) {
+                        const loaded = Object.keys(data).map(key => data[key]);
+                        loaded.sort((a, b) => (a.order || 999) - (b.order || 999));
+                        dishesList = loaded;
+                        renderDishes();
+                    }
+                }, (error) => {
+                    console.error('Realtime DB potluck sync error:', error);
+                });
+
+                // 4. Listen to global teacher reviews on dishes
+                const dishReviewsRef = ref(rtdb, `${appRootPath}/dish_reviews`);
+                onValue(dishReviewsRef, (snapshot) => {
+                    const data = snapshot.val() || {};
+                    const parsedMap = {};
+                    Object.keys(data).forEach(dishId => {
+                        const entries = data[dishId] || {};
+                        parsedMap[dishId] = Object.keys(entries).map(key => ({
+                            id: key,
+                            ...entries[key]
+                        }));
+                    });
+                    dishReviewsMap = parsedMap;
+                    renderDishes();
+                    const activeDishId = document.getElementById('reviewTargetDishId')?.value;
+                    if (activeDishId && !dishReviewModal.classList.contains('hidden')) {
+                        renderModalDishReviews(activeDishId);
+                    }
+                    if (window.AOS) window.AOS.refresh();
+                }, (error) => {
+                    console.error('Realtime DB dish reviews sync error:', error);
+                });
+            } catch (err) {
+                console.error('Realtime DB initialization warning:', err);
+                const syncText = document.getElementById('dbSyncText');
+                if (syncText) syncText.textContent = 'Local Mode';
+            }
+
+            if (window.AOS) {
+                window.AOS.refresh();
+            }
+        }
+
+        function bootApp() {
+            if (window.AOS) {
+                document.documentElement.classList.add('aos-ready');
+                window.AOS.init({
+                    once: true,
+                    offset: 30,
+                    duration: 650,
+                    easing: 'ease-out-cubic'
+                });
+            }
+            initRealtimeDatabaseSync();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', bootApp);
+        } else {
+            bootApp();
+        }
+    </script>
+</body>
+</html>
+
