@@ -201,8 +201,8 @@
             </div>
             <div class="flex flex-wrap items-center gap-2.5">
                 <span id="dbSyncBadge" class="liquid-glass text-xs font-semibold text-emerald-800 px-3.5 py-2 rounded-full inline-flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span id="dbSyncText">Realtime DB (asia-southeast1)</span>
+                    <span id="dbSyncDot" class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span id="dbSyncText">Connecting asia-southeast1...</span>
                 </span>
                 <span class="liquid-glass text-xs font-semibold text-indigo-950 px-4 py-2 rounded-full">
                     24 Bright Minds &bull; Roll No. 7201&ndash;7224
@@ -704,25 +704,25 @@
     </div>
 
     <script type="module">
-        // Import Firebase App, Analytics & Realtime Database (asia-southeast1) SDKs
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getDatabase, ref, set, push, remove, onValue } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
+        // Import Firebase App & Realtime Database (asia-southeast1) SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
+        import { getDatabase, ref, set, push, remove, onValue } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-database.js";
 
-        // Your web app's Firebase configuration with Realtime Database in asia-southeast1
+        // Updated Firebase configuration with asia-southeast1 Realtime Database URL
         const firebaseConfig = {
-            apiKey: "AIzaSyB81Z2c6rcs26lMY058-XrdZuz83Rpz9Ao",
-            authDomain: "mourish-genbus.firebaseapp.com",
-            databaseURL: "https://mourish-genbus-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "mourish-genbus",
-            storageBucket: "mourish-genbus.firebasestorage.app",
-            messagingSenderId: "197392397360",
-            appId: "1:197392397360:web:d6f64e781f53553a4869f5",
-            measurementId: "G-PLV0LGV7ZV"
+            apiKey: "AIzaSyAwMuus119nwr2QD06lhJVh3QYgwaQms0c",
+            authDomain: "b-ais-77263.firebaseapp.com",
+            databaseURL: "https://b-ais-77263-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "b-ais-77263",
+            storageBucket: "b-ais-77263.firebasestorage.app",
+            messagingSenderId: "1028345331139",
+            appId: "1:1028345331139:web:70b73b54c9f116de06d176",
+            measurementId: "G-33G0MRBPE5"
         };
 
         // Initialize Firebase App & Realtime Database (asia-southeast1)
         const app = initializeApp(firebaseConfig);
-        const rtdb = getDatabase(app);
+        const rtdb = getDatabase(app, "https://b-ais-77263-default-rtdb.asia-southeast1.firebasedatabase.app");
         const appRootPath = "grade7b_aurobana";
 
         // Default list of 24 Grade 7B students in exact given order with Roll Numbers 7201-7224
@@ -777,8 +777,8 @@
 
         let childrenList = [...defaultStudents];
         let dishesList = [...defaultPotluckDishes];
-        let studentReviewsMap = {}; // { rollNo: [ { id, teacherName, comment, timestamp } ] }
-        let dishReviewsMap = {};    // { dishId: [ { id, teacherName, rating, comment, timestamp } ] }
+        let studentReviewsMap = {};
+        let dishReviewsMap = {};
         let activeStudent = null;
         let pendingDeleteDishId = null;
 
@@ -786,6 +786,25 @@
         const dishesGrid = document.getElementById('dishesGrid');
         const allStudentReviewsGrid = document.getElementById('allStudentReviewsGrid');
         const noResults = document.getElementById('noResults');
+
+        function setDbStatus(text, isError = false) {
+            const badge = document.getElementById('dbSyncBadge');
+            const dot = document.getElementById('dbSyncDot');
+            const label = document.getElementById('dbSyncText');
+            if (!badge || !dot || !label) return;
+            label.textContent = text;
+            if (isError) {
+                badge.classList.remove('text-emerald-800');
+                badge.classList.add('text-rose-800');
+                dot.classList.remove('bg-emerald-500');
+                dot.classList.add('bg-rose-500');
+            } else {
+                badge.classList.remove('text-rose-800');
+                badge.classList.add('text-emerald-800');
+                dot.classList.remove('bg-rose-500');
+                dot.classList.add('bg-emerald-500');
+            }
+        }
 
         function escapeHtml(str) {
             return String(str ?? '')
@@ -807,7 +826,7 @@
             window.__toastTimer = setTimeout(() => {
                 banner.classList.add('hidden');
                 banner.classList.remove('flex');
-            }, 3000);
+            }, 3500);
         }
 
         // Render Student Cards with Roll Number, Name, Dish Badge & Teacher Note Count
@@ -866,11 +885,13 @@
                 const studentName = studentObj ? studentObj.name : `Roll No. ${rollNo}`;
                 const list = studentReviewsMap[rollNo] || [];
                 list.forEach(rev => {
-                    allEntries.push({
-                        rollNo,
-                        studentName,
-                        ...rev
-                    });
+                    if (rev && rev.comment) {
+                        allEntries.push({
+                            rollNo,
+                            studentName,
+                            ...rev
+                        });
+                    }
                 });
             });
 
@@ -897,8 +918,6 @@
             allEntries.forEach((entry, index) => {
                 const card = document.createElement('div');
                 card.className = 'liquid-glass-subtle rounded-2xl p-5 flex flex-col justify-between hover:bg-white/80 transition relative overflow-hidden';
-                card.setAttribute('data-aos', 'fade-up');
-                card.setAttribute('data-aos-delay', String((index % 3) * 80));
                 card.innerHTML = `
                     <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-900 to-rose-600"></div>
                     <div>
@@ -912,7 +931,7 @@
                         </p>
                     </div>
                     <div class="border-t border-white/70 pt-2.5 flex items-center justify-between text-xs">
-                        <span class="font-bold text-amber-900">&mdash; ${escapeHtml(entry.teacherName)}</span>
+                        <span class="font-bold text-amber-900">&mdash; ${escapeHtml(entry.teacherName || 'Faculty')}</span>
                         <span class="text-[11px] text-slate-500">Faculty Review</span>
                     </div>
                 `;
@@ -922,12 +941,14 @@
 
         // Render Potluck Dishes Grid with Global Edit, Delete & Teacher Dish Reviews
         function renderDishes() {
+            const validDishes = dishesList.filter(d => d && typeof d.name === 'string' && d.name.trim() !== '');
+
             const countBadge = document.getElementById('dishCountBadge');
             if (countBadge) {
-                countBadge.textContent = `${dishesList.length} ${dishesList.length === 1 ? 'Dish' : 'Dishes'}`;
+                countBadge.textContent = `${validDishes.length} ${validDishes.length === 1 ? 'Dish' : 'Dishes'}`;
             }
 
-            if (dishesList.length === 0) {
+            if (validDishes.length === 0) {
                 dishesGrid.innerHTML = `
                     <div class="col-span-full text-center py-10 liquid-glass-subtle rounded-2xl">
                         <p class="font-display text-lg font-bold text-indigo-950">No potluck dishes listed yet</p>
@@ -939,8 +960,9 @@
 
             const fragment = document.createDocumentFragment();
 
-            dishesList.forEach((dish, idx) => {
-                const reviews = dishReviewsMap[dish.id] || [];
+            validDishes.forEach((dish, idx) => {
+                const dishId = dish.id || `potluck-${idx + 1}`;
+                const reviews = (dishReviewsMap[dishId] || []).filter(r => r && r.comment);
                 const reviewsHtml = reviews.length > 0
                     ? `
                         <div class="mt-3 pt-3 border-t border-slate-200/70 space-y-2">
@@ -950,7 +972,7 @@
                             ${reviews.map(r => `
                                 <div class="bg-white/90 border border-slate-100 rounded-xl p-2.5 text-xs">
                                     <div class="flex items-center justify-between gap-1 mb-0.5">
-                                        <span class="font-bold text-indigo-950">${escapeHtml(r.teacherName)}</span>
+                                        <span class="font-bold text-indigo-950">${escapeHtml(r.teacherName || 'Teacher')}</span>
                                         <span class="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">${escapeHtml(r.rating || '5/5')}</span>
                                     </div>
                                     <p class="text-slate-700 leading-snug">&ldquo;${escapeHtml(r.comment)}&rdquo;</p>
@@ -970,10 +992,10 @@
                                 #${idx + 1} &bull; ${escapeHtml(dish.category || 'Potluck Dish')}
                             </span>
                             <div class="flex items-center gap-1.5">
-                                <button onclick="window.editDishItem('${escapeHtml(dish.id)}')" title="Edit Dish Name or Details" class="px-2.5 py-1 rounded-lg bg-white hover:bg-indigo-950 hover:text-white text-indigo-950 text-xs font-semibold border border-slate-200 transition cursor-pointer">
+                                <button type="button" data-action="edit-dish" data-id="${escapeHtml(dishId)}" title="Edit Dish Name or Details" class="px-2.5 py-1 rounded-lg bg-white hover:bg-indigo-950 hover:text-white text-indigo-950 text-xs font-semibold border border-slate-200 transition cursor-pointer">
                                     Edit
                                 </button>
-                                <button onclick="window.promptDeleteDish('${escapeHtml(dish.id)}', '${escapeHtml(dish.name)}')" title="Delete Dish Globally" class="px-2.5 py-1 rounded-lg bg-white hover:bg-rose-600 hover:text-white text-rose-700 text-xs font-semibold border border-slate-200 transition cursor-pointer">
+                                <button type="button" data-action="delete-dish" data-id="${escapeHtml(dishId)}" data-name="${escapeHtml(dish.name)}" title="Delete Dish Globally" class="px-2.5 py-1 rounded-lg bg-white hover:bg-rose-600 hover:text-white text-rose-700 text-xs font-semibold border border-slate-200 transition cursor-pointer">
                                     Delete
                                 </button>
                             </div>
@@ -984,7 +1006,7 @@
                         <p class="text-xs font-medium text-slate-600 mb-3">
                             Contributor: <strong class="text-indigo-950">${escapeHtml(dish.broughtBy || 'Grade 7B')}</strong>
                         </p>
-                        <button onclick="window.openDishReviewModal('${escapeHtml(dish.id)}')" class="w-full py-2 px-3 rounded-xl bg-amber-500/15 hover:bg-amber-600 text-amber-950 hover:text-white border border-amber-300/70 text-xs font-bold transition cursor-pointer">
+                        <button type="button" data-action="review-dish" data-id="${escapeHtml(dishId)}" class="w-full py-2 px-3 rounded-xl bg-amber-500/15 hover:bg-amber-600 text-amber-950 hover:text-white border border-amber-300/70 text-xs font-bold transition cursor-pointer">
                             + Teacher Review Dish
                         </button>
                         ${reviewsHtml}
@@ -996,6 +1018,22 @@
             dishesGrid.innerHTML = '';
             dishesGrid.appendChild(fragment);
         }
+
+        // Event delegation for Dish Cards (prevents quote escaping bugs in dish names)
+        dishesGrid.addEventListener('click', (e) => {
+            const btn = e.target.closest('button[data-action]');
+            if (!btn) return;
+            const action = btn.getAttribute('data-action');
+            const id = btn.getAttribute('data-id');
+            if (action === 'edit-dish') {
+                window.editDishItem(id);
+            } else if (action === 'delete-dish') {
+                const name = btn.getAttribute('data-name') || 'this dish';
+                window.promptDeleteDish(id, name);
+            } else if (action === 'review-dish') {
+                window.openDishReviewModal(id);
+            }
+        });
 
         // Filter Functionality (Search by Name, Roll Number, or Dish)
         window.filterStars = function() {
@@ -1015,7 +1053,7 @@
         function renderModalStudentComments(rollNo) {
             const listEl = document.getElementById('modalStudentCommentsList');
             const countEl = document.getElementById('modalStudentCommentCount');
-            const reviews = studentReviewsMap[rollNo] || [];
+            const reviews = (studentReviewsMap[rollNo] || []).filter(r => r && r.comment);
             if (countEl) countEl.textContent = reviews.length;
             if (!listEl) return;
 
@@ -1027,7 +1065,7 @@
             listEl.innerHTML = reviews.map(r => `
                 <div class="bg-white border border-indigo-100 rounded-xl p-3 shadow-sm">
                     <p class="text-xs text-slate-800 italic mb-1">&ldquo;${escapeHtml(r.comment)}&rdquo;</p>
-                    <span class="block text-[11px] font-bold text-indigo-950">&mdash; ${escapeHtml(r.teacherName)}</span>
+                    <span class="block text-[11px] font-bold text-indigo-950">&mdash; ${escapeHtml(r.teacherName || 'Faculty')}</span>
                 </div>
             `).join('');
         }
@@ -1098,14 +1136,15 @@
                 document.getElementById('teacherStudentComment').value = '';
                 showToast(`Teacher review posted for ${activeStudent.name}!`);
             } catch (err) {
-                console.error('Error posting student review:', err);
+                console.error('Firebase error posting student review:', err);
+                setDbStatus('DB Permission Error (Check Rules)', true);
                 const list = studentReviewsMap[activeStudent.rollNo] || [];
                 list.push({ id: `local-${Date.now()}`, ...reviewData });
                 studentReviewsMap[activeStudent.rollNo] = list;
                 renderModalStudentComments(activeStudent.rollNo);
                 renderAllStudentReviewsWall();
                 window.filterStars();
-                showToast('Review saved locally');
+                showToast(`Saved locally (${err.code || 'check Firebase rules'})`);
             } finally {
                 btn.disabled = false;
                 btn.textContent = 'Post Teacher Comment Globally';
@@ -1144,8 +1183,9 @@
                 });
                 showToast(`Updated ${updatedName} in Realtime DB!`);
             } catch (err) {
-                console.error('Error saving student details:', err);
-                showToast('Saved locally');
+                console.error('Firebase error saving student details:', err);
+                setDbStatus('DB Permission Error (Check Rules)', true);
+                showToast(`Saved locally (${err.code || 'check Firebase rules'})`);
             } finally {
                 btn.textContent = 'Update Student Info';
                 btn.disabled = false;
@@ -1158,7 +1198,7 @@
 
         function renderModalDishReviews(dishId) {
             const listEl = document.getElementById('modalDishReviewsList');
-            const reviews = dishReviewsMap[dishId] || [];
+            const reviews = (dishReviewsMap[dishId] || []).filter(r => r && r.comment);
             if (!listEl) return;
 
             if (reviews.length === 0) {
@@ -1169,7 +1209,7 @@
             listEl.innerHTML = reviews.map(r => `
                 <div class="bg-amber-50/70 border border-amber-200/80 rounded-xl p-2.5 text-xs">
                     <div class="flex items-center justify-between mb-0.5">
-                        <span class="font-bold text-indigo-950">${escapeHtml(r.teacherName)}</span>
+                        <span class="font-bold text-indigo-950">${escapeHtml(r.teacherName || 'Teacher')}</span>
                         <span class="text-[10px] font-bold text-amber-900">${escapeHtml(r.rating || '5/5')}</span>
                     </div>
                     <p class="text-slate-700 italic">&ldquo;${escapeHtml(r.comment)}&rdquo;</p>
@@ -1224,13 +1264,14 @@
                 document.getElementById('dishReviewComment').value = '';
                 showToast('Dish review posted globally!');
             } catch (err) {
-                console.error('Error posting dish review:', err);
+                console.error('Firebase error posting dish review:', err);
+                setDbStatus('DB Permission Error (Check Rules)', true);
                 const list = dishReviewsMap[dishId] || [];
                 list.push({ id: `local-${Date.now()}`, ...reviewData });
                 dishReviewsMap[dishId] = list;
                 renderModalDishReviews(dishId);
                 renderDishes();
-                showToast('Dish review saved locally');
+                showToast(`Saved locally (${err.code || 'check Firebase rules'})`);
             }
         };
 
@@ -1290,15 +1331,16 @@
             if (!name) return;
 
             const existingDish = dishesList.find(d => d.id === id);
+            const maxOrder = dishesList.reduce((max, item) => Math.max(max, Number(item.order) || 0), 0);
             const order = existingDish && typeof existingDish.order === 'number'
                 ? existingDish.order
-                : dishesList.length + 1;
+                : maxOrder + 1;
 
             const newDish = { id, order, name, broughtBy, category };
             if (existingId) {
                 dishesList = dishesList.map(d => d.id === id ? newDish : d);
             } else {
-                dishesList.push(newDish);
+                dishesList = [...dishesList, newDish];
             }
             renderDishes();
             closeDishModal();
@@ -1306,10 +1348,11 @@
             try {
                 const dishRef = ref(rtdb, `${appRootPath}/potluck_dishes/${id}`);
                 await set(dishRef, newDish);
-                showToast(existingId ? `"${name}" updated in Realtime DB!` : `"${name}" added in Realtime DB!`);
+                showToast(existingId ? `"${name}" updated in Realtime DB!` : `"${name}" added to menu!`);
             } catch (err) {
-                console.error('Error saving dish:', err);
-                showToast('Dish updated locally');
+                console.error('Firebase error saving dish:', err);
+                setDbStatus('DB Permission Error (Check Rules)', true);
+                showToast(`Dish shown locally (${err.code || 'check Firebase rules'})`);
             }
         };
 
@@ -1341,8 +1384,9 @@
                 await remove(dishRef);
                 showToast('Dish deleted from Realtime DB!');
             } catch (err) {
-                console.error('Error deleting dish:', err);
-                showToast('Dish removed locally');
+                console.error('Firebase error deleting dish:', err);
+                setDbStatus('DB Permission Error (Check Rules)', true);
+                showToast(`Removed locally (${err.code || 'check Firebase rules'})`);
             }
         });
 
@@ -1370,8 +1414,9 @@
                 // 1. Listen to global student overrides
                 const studentsRef = ref(rtdb, `${appRootPath}/students`);
                 onValue(studentsRef, (snapshot) => {
+                    setDbStatus('Realtime DB (asia-southeast1)', false);
                     const data = snapshot.val();
-                    if (data) {
+                    if (data && typeof data === 'object') {
                         childrenList = defaultStudents.map(s =>
                             data[s.rollNo] ? { ...s, ...data[s.rollNo] } : s
                         );
@@ -1380,6 +1425,7 @@
                     }
                 }, (error) => {
                     console.error('Realtime DB student sync error:', error);
+                    setDbStatus('DB Read Blocked (Check Rules)', true);
                 });
 
                 // 2. Listen to global student reviews by teachers
@@ -1408,6 +1454,7 @@
                 const dishesRef = ref(rtdb, `${appRootPath}/potluck_dishes`);
                 let hasSeeded = false;
                 onValue(dishesRef, async (snapshot) => {
+                    setDbStatus('Realtime DB (asia-southeast1)', false);
                     const data = snapshot.val();
                     if (!data && !hasSeeded) {
                         hasSeeded = true;
@@ -1415,15 +1462,36 @@
                         defaultPotluckDishes.forEach(item => {
                             initialObj[item.id] = item;
                         });
-                        await set(dishesRef, initialObj);
-                    } else if (data) {
-                        const loaded = Object.keys(data).map(key => data[key]);
-                        loaded.sort((a, b) => (a.order || 999) - (b.order || 999));
-                        dishesList = loaded;
-                        renderDishes();
+                        try {
+                            await set(dishesRef, initialObj);
+                        } catch (seedErr) {
+                            console.error('Could not seed default dishes to Firebase:', seedErr);
+                            setDbStatus('DB Write Blocked (Enable Test Mode)', true);
+                        }
+                    } else if (data && typeof data === 'object') {
+                        const loaded = Object.keys(data)
+                            .map(key => {
+                                const val = data[key];
+                                if (!val || typeof val !== 'object') return null;
+                                return {
+                                    id: val.id || key,
+                                    order: typeof val.order === 'number' ? val.order : 999,
+                                    name: val.name || '',
+                                    broughtBy: val.broughtBy || 'Grade 7B Potluck',
+                                    category: val.category || 'Main Course & Breads'
+                                };
+                            })
+                            .filter(item => item && item.name.trim() !== '');
+
+                        if (loaded.length > 0) {
+                            loaded.sort((a, b) => a.order - b.order);
+                            dishesList = loaded;
+                            renderDishes();
+                        }
                     }
                 }, (error) => {
                     console.error('Realtime DB potluck sync error:', error);
+                    setDbStatus('DB Sync Error (Check Console)', true);
                 });
 
                 // 4. Listen to global teacher reviews on dishes
@@ -1444,14 +1512,12 @@
                     if (activeDishId && !dishReviewModal.classList.contains('hidden')) {
                         renderModalDishReviews(activeDishId);
                     }
-                    if (window.AOS) window.AOS.refresh();
                 }, (error) => {
                     console.error('Realtime DB dish reviews sync error:', error);
                 });
             } catch (err) {
-                console.error('Realtime DB initialization warning:', err);
-                const syncText = document.getElementById('dbSyncText');
-                if (syncText) syncText.textContent = 'Local Mode';
+                console.error('Realtime DB initialization error:', err);
+                setDbStatus('Local Mode (Offline)', true);
             }
 
             if (window.AOS) {
